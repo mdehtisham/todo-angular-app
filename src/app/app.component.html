@@ -10,8 +10,14 @@
         <button type="submit" class="btn btn-primary mb-3">Add Todo</button>
       </div>
     </form>
-    <div *ngFor="let todo of todoArray" class="col-md-12 border mb-1">
-      <p class="lead ps-3 pt-1">{{todo}}</p>
-    </div>    
+    <!-- <div *ngFor="let todo of todoArray" class="col-md-12 border mb-1"> -->
+      <!-- <div class="col-md-11 text-left">
+        <p class="lead ps-3 pt-1">{{todo}} </p>
+      </div>
+      <div class="col-md-1 text-right"><span>X</span></div> -->
+      <ul class="col-md-12 lists list-group">
+        <li *ngFor="let todo of todoArray" contenteditable="true" class="list-group-item d-flex justify-content-between align-items-start">{{todo}}<i contenteditable="false" class="btn" (click)="deleteItem(todo)"><i class="fas fa-trash"></i></i></li>
+      </ul>
+    <!-- </div>     -->
   </div>
 </div>

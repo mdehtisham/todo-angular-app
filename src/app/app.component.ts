@@ -16,13 +16,7 @@ export class AppComponent {
 
   // /*delete item*/
   deleteItem(todo: string) {
-    // for (let i = 0; i <= this.todoArray.length; i++) {
-    //   if (todo == this.todoArray[i]) {
-    //     this.todoArray.splice(i, 1)
-    //   }
-    // }
-
-    console.log("delete todo " + todo)
+    this.todoArray = this.todoArray.filter(val => val !== todo)
   }
 
   // submit Form
