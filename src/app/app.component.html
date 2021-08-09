@@ -1,1 +1,17 @@
-<h1>Hello from todo</h1>
+<div class="container m-5">
+  <div id="todo-container" class="col-md-6 mx-auto border border-secondary p-2">
+    <!-- (submit)="todoSubmit(todoForm.value); todoForm.resetForm()" -->
+    <form #todoForm= "ngForm" class="row" (submit)="todoSubmit(todoForm.value.todoInput); todoForm.resetForm()">     
+      <div class="col-md-9">
+        <label for="todoInput" class="visually-hidden">Todo</label>
+        <input type="text" class="form-control" id="todoInput" placeholder="Enter the todo..." name="todoInput" ngModel>
+      </div>
+      <div class="col-md-3">
+        <button type="submit" class="btn btn-primary mb-3">Add Todo</button>
+      </div>
+    </form>
+    <div *ngFor="let todo of todoArray" class="col-md-12 border mb-1">
+      <p class="lead ps-3 pt-1">{{todo}}</p>
+    </div>    
+  </div>
+</div>
