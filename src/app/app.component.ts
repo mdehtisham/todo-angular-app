@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { FormGroup } from '@angular/forms';
 
 @Component({
   selector: 'app-root',
@@ -10,7 +11,6 @@ export class AppComponent {
 
   todoArray: string[] = [];
   todoInput: any;
-  //todoForm: new FormGroup()
 
 
 
@@ -21,9 +21,8 @@ export class AppComponent {
 
   // submit Form
   todoSubmit(value: string) {
-    if (value !== "") {
+    if (value) {
       this.todoArray.push(value)
-      //this.todoForm.reset()
     } else {
       alert('Todo is required')
     }
